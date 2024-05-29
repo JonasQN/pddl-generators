@@ -4,6 +4,11 @@ set -euo pipefail
 
 OPS=$1  # Either 3 or 4.
 BLOCKS=$2
+NUM_FILES=$3  # Number of PDDL files to generate
+OUTPUT_DIR=$4  # Directory to save the PDDL files
+
+# Create the output directory if it doesn't exist
+mkdir -p ${OUTPUT_DIR}
 
 # Get full directory name of the script (https://stackoverflow.com/a/246128).
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
@@ -11,7 +16,8 @@ SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 BS=${SCRIPT_DIR}/bwstates.1/bwstates
 TR=${SCRIPT_DIR}/${OPS}ops/2pddl/2pddl
 
-${BS} -s 2 -n ${BLOCKS} > STATES
-${TR} -d STATES -n ${BLOCKS}
-
-rm STATES
+for i in $(seq 1 ${NUM_FILES}); do
+    ${BS} -s 2 -n ${BLOCKS} > STATES
+    ${TR} -d STATES -n ${BLOCKS} > ${OUTPUT_DIR}/problem_${i}.pddl
+    rm STATES
+done
