@@ -9,16 +9,13 @@
 (on-table b2)
 (on-table b3)
 (on b4 b1)
-(on-table b5)
-(clear b2)
+(on b5 b2)
 (clear b4)
 (clear b5)
 )
 (:goal
 (and
-(on b1 b3)
-(on b4 b2)
-(on b5 b4))
+(on b1 b5))
 )
 )
 

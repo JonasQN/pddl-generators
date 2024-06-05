@@ -6,10 +6,10 @@
 (:init
 (arm-empty)
 (on-table b1)
-(on b2 b1)
-(on b3 b5)
+(on b2 b5)
+(on b3 b2)
 (on-table b4)
-(on b5 b2)
+(on b5 b1)
 (clear b3)
 (clear b4)
 )

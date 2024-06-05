@@ -8,17 +8,15 @@
 (on-table b1)
 (on b2 b1)
 (on-table b3)
-(on b4 b2)
-(on-table b5)
-(clear b3)
+(on b4 b3)
+(on b5 b2)
 (clear b4)
 (clear b5)
 )
 (:goal
 (and
-(on b3 b1)
-(on b4 b2)
-(on b5 b3))
+(on b2 b4)
+(on b5 b2))
 )
 )
 

@@ -14,8 +14,7 @@
 )
 (:goal
 (and
-(on b1 b2)
-(on b3 b4))
+(on b2 b4))
 )
 )
 

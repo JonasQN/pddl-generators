@@ -13,7 +13,7 @@
 )
 (:goal
 (and
-(on b3 b1))
+(on b1 b2))
 )
 )
 
