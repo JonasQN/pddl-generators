@@ -29,7 +29,7 @@ def find_duplicates(folder_path):
     return duplicates
 
 if __name__ == '__main__':
-    folder_path = "./problems"  # replace with your folder path
+    folder_path = "./problems1"  # replace with your folder path
     duplicates = find_duplicates(folder_path)
 
     if duplicates:
